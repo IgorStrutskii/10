@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Dz10</title>
+  <script>
+    function sortArray() {
+      var array = document.getElementById("arrayInput").value.split(',').map(Number);
+      array.sort(function(a, b) {
+        return a - b;
+      });
+      document.getElementById("sortedArray").textContent = array.join(', ');
+    }
+
+    function removeElements() {
+      var array = document.getElementById("arrayInput").value.split(',').map(Number);
+      array.splice(1, 4);
+      document.getElementById("modifiedArray").textContent = array.join(', ');
+    }
+  </script>
+</head>
+<body>
+  <label for="arrayInput">Введіть елементи масиву (розділені комами):</label>
+  <input type="text" id="arrayInput">
+
+  <button onclick="sortArray()">Відсортувати за зростанням</button>
+  <p id="sortedArray"></p>
+
+  <button onclick="removeElements()">Видалити елементи з 2 включно по 4 включно</button>
+  <p id="modifiedArray"></p>
+</body>
+</html>
